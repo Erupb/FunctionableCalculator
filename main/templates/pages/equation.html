@@ -1,0 +1,72 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+        <div class="uk-margin-medium-top uk-margin-medium-bottom uk-child-width-expand" uk-grid>
+
+
+            <div class="maincontent" align="center">
+                <div>
+                    <div class="uk-dark uk-padding" style="margin-bottom:70px;">
+                        <h3>Обычное уравнение с неизвестной</h3>
+                        <div class="uk-margin">
+                            <input class="uk-input uk-form-width-medium usual_equation_text_1" type="text" placeholder="a" style="width:50px;">
+                            <select class="uk-select usual_equation_text_2" style="width:50px;">
+                                <option>+</option>
+                                <option>-</option>
+                                <option>/</option>
+                                <option>*</option>
+                            </select>
+                            <input class="uk-input uk-form-width-medium usual_equation_text_3" type="text" placeholder="b" style="width:50px;">
+                            <label> = </label>
+                            <input class="uk-input uk-form-width-medium usual_equation_text_4" type="text" placeholder="c" style="width:50px;">
+                        </div>
+                        <button class="uk-button uk-button-secondary" onclick="usual_equation()">Решить</button>
+                        <h4><b>Пример:</b> 5 + x = 5; x - 5 = 0</h4>
+                        <h4 class="usual_equation_answer">Ответ:</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="maincontent">
+                <div align="center">
+                    <div class="uk-dark uk-padding" style="margin-bottom:70px;">
+                        <h3>Квадратное уравнение</h3>
+                        <div class="uk-margin">
+                            <input class="uk-input uk-form-width-medium quadratic_equation_text_1" type="text" placeholder="a" style="width:50px;">
+                            <select class="uk-select quadratic_equation_text_2" style="width:50px;">
+                                <option>+</option>
+                                <option>-</option>
+
+                            </select>
+                            <input class="uk-input uk-form-width-medium quadratic_equation_text_3" type="text" placeholder="b" style="width:50px;">
+                            <select class="uk-select quadratic_equation_text_4" style="width:50px;">
+                                <option>+</option>
+                                <option>-</option>
+
+                            </select>
+                            <input class="uk-input uk-form-width-medium quadratic_equation_text_5" type="text" placeholder="c" style="width:50px;">
+                            <label> = 0</label>
+                        </div>
+                        <button class="uk-button uk-button-secondary" onclick="quadratic_equation()">Решить</button>
+                        <h4><b>Пример:</b> 1 + 3 - 4;</h4>
+                        <h4 class="quadratic_equation_answer">Ответ:</h4>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <a onclick="javascript:history.back(); return false;" style="position: fixed; left:20px; top:250px; z-index: 9999; background: #ffa500; padding: 0px 5px 0px 5px; margin: 5px 10px 10px 5px; height:1.8em; width:3em; padding-top:5px;">Назад</a>
+    </div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/equation.js' %}"></script>
+{% endblock %}

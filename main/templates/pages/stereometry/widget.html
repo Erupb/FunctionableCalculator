@@ -1,0 +1,36 @@
+{% load static %}
+
+
+<h2>{{ widget.name }}</h2>
+
+<img src="{% static widget.image %}" class="uk-align-center">
+
+
+<form class="uk-form-horizontal">
+    {% for field in widget.input %}
+    <div class="uk-margin">
+        <label class="uk-form-label">{{ field.label }}</label>
+        <div class="uk-form-controls">
+            {{field}}
+        </div>
+    </div>
+    {% endfor %}
+</form>
+
+<div class="uk-margin">
+    <button class="uk-button uk-button-primary uk-width-1-1" onclick="{{ widget.js_function }}">Рассчитать</button>
+</div>
+
+<form class="uk-form-horizontal">
+
+    {% for field in widget.output %}
+    <div class="uk-margin">
+        <label class="uk-form-label">{{ field.label }}</label>
+        <div class="uk-form-controls">
+            {{field}}
+        </div>
+    </div>
+    {% endfor %}
+
+</form>
+
