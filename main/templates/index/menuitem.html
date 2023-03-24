@@ -1,0 +1,27 @@
+{% load static %}
+
+<div>
+    <div class="uk-card uk-card-default uk-card-body uk-padding-small">
+        <div uk-grid>
+            <div class="uk-margin-small-top">
+                <a href="{% url item.url %}">
+                    <img data-src="
+                    {% if item.image_path %}
+                        {% static item.image_path %}
+                    {% else %}
+                        {% static 'images/default_tool_avatar.png' %}
+                    {% endif %}
+                    " width="110" alt="" uk-img>
+                </a>
+            </div>
+            <div class="uk-align-left uk-margin-top">
+                <h3>
+                    <u><a href="{% url item.url %}" class="uk-link-heading">{{ item.name }}</a></u>
+                </h3>
+                {% if item.text %}
+                <p><i>{{ item.text | safe }}</i></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

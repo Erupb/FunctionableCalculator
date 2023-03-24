@@ -1,0 +1,43 @@
+image: python:latest
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache"
+
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+default:
+  tags:
+    - django
+  before_script:
+    - python -V
+    - pip install virtualenv
+    - virtualenv venv
+    - source venv/bin/activate
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - apt-get update
+    - apt-get install ssh-client
+
+stages:
+  - deploy
+
+upload_to_server:
+  stage: deploy
+  before_script:
+    - apt-get update
+    - apt-get install -y ssh-client
+    - apt-get install -qq git
+    - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh $SSH_USER@$SSH_HOST "cd prodserver_conf/ms102_yacalc && git checkout master && git pull origin master && exit"
+    - ssh $SSH_USER@$SSH_HOST "cd prodserver_conf && docker stop ms102_yacalc && docker rm ms102_yacalc && docker-compose build ms102_yacalc && docker-compose up -d ms102_yacalc && exit"
+  only:
+    - master
