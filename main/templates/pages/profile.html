@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+
+{% load render_table from django_tables2 %}
+{% block content %}
+<style>
+    .block1{
+        display: none;
+    }
+</style>
+   <div class="uk-child-width-expand@s uk-text-center uk-text-bold" uk-grid>
+    <div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-small uk-card-body"  >
+             <div class="uk-card uk-card-default uk-width-1-1@m">
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-circle" id="imgBlock" width="40" height="40" src="../../../static/images/noavatar.png">
+                        </div>
+                        <div class="uk-width-expand">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">{{ first_name }} {{ last_name }} </h3>
+                            <p class="uk-text-meta uk-margin-remove-top"><span class="uk-label uk-label-warning">Обычный </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    <div><h4>Email: {{ email }}</h4></div>
+                    <div><h4 style="margin-right:13em;"><b>Логин:</b> {{ username }}</h4></div>
+                    <div><h4 style="margin-right:10.3em;"><b>Email:</b> {{ email }}</h4></div>
+                    <div><h4><b>Дата последнего входа:</b> {{ last_login }}</h4></div>
+                </div>
+    <div class="uk-card-footer">
+        <button href="#" type="button" class="uk-button uk-button-text" id="edit">Редактировать </button>
+        <div class="block1" id="block1">
+           <p>Загрузите ваши фотографии на сервер</p>
+           <p><input type="file" name="newphoto" id="newphoto" multiple accept="image/jpeg">
+           <input type="submit" id="editPhoto" value="Отправить"></p>
+
+        </div>
+    </div>
+</div>        {% render_table all_equations %}
+        </div>
+
+
+
+    </div>
+    <div>
+
+    </div>
+</div>
+<a onclick="javascript:history.back(); return false;" style="position: fixed; left:20px; top:250px; z-index: 9999; background: #ffa500; padding: 0px 5px 0px 5px; margin: 5px 10px 10px 5px; height:30px; width:60px; padding-top:5px;">Назад</a>
+<script>
+    edit.addEventListener('click', function(e){
+        document.getElementById("block1").style.display = "block";
+    })
+    editPhoto.addEventListener('click', function(e){
+        document.getElementById("imgBlock").src = "https://yt3.ggpht.com/a/AGF-l7_LNb4amv_bkMyv5m1cxEhJ5HUIqi8P51QLAQ=s900-c-k-c0xffffffff-no-rj-mo";
+    })
+
+</script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+    <form method="POST">
+    {% csrf_token %}
+    <div class="uk-container uk-container-small">
+    <div class="uk-align-center uk-text-lead uk-text-italic uk-margin-left uk-text-center 	">
+            {{ form }}
+        <div class="uk-animation-toggle" tabindex="0">
+        <div class="uk-card uk-card-default uk-card-body uk-animation-shake uk-animation-reverse uk-height-max-small uk-margin-small-top">
+            <p class="uk-text-center ">{{ result }}</p>
+        </div>
+    </div>
+    </div>
+    <a onclick="javascript:history.back(); return false;" style="position: fixed; left:20px; top:250px; z-index: 9999; background: #ffa500; padding: 0px 5px 0px 5px; margin: 5px 10px 10px 5px; height:1.8em; width:3em; padding-top:5px;">Назад</a>
+
+     </div>
+            <input type="submit" class="uk-align-center uk-button uk-button-secondary" value="Отправить "><br><br><br><br><br><br><br><br><br>
+
+     </form>
+{% endblock %}

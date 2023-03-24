@@ -1,0 +1,19 @@
+# Web application
+django==3.0.6
+django-tables2
+
+# Networking
+requests~=2.23.0
+
+# Code style
+pylint==2.5.2
+pylint-django==2.0.15
+
+# Webserver
+gunicorn==20.0.4
+
+# Math
+sympy~=1.6
+
+# Database
+mysqlclient==1.4.6

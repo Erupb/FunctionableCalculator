@@ -1,0 +1,576 @@
+<html lang="ru">
+
+<head>
+    <title>Главная</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+    body {
+        padding: 0;
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    html,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a {
+        font-family: "Raleway";
+    }
+
+    /*header style*/
+    .header {
+        position: relative;
+        background-image: url('https://avatars.mds.yandex.net/get-zen_doc/1711766/pub_5cd569195b95f800b0f24296_5cd569a1c3cffc00b36b796b/scale_1200');
+        height: 500px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .overlay {
+        position: absolute;
+        min-height: 100%;
+        min-width: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(244, 244, 244, 0.79);
+    }
+
+    .description {
+        position: absolute;
+        top: 30%;
+        margin: auto;
+        padding: 2em;
+
+    }
+
+    .description h1 {
+        color: #F97300;
+    }
+        .description h5 {
+        color: #000000;
+    }
+
+    .description p {
+        color: #666;
+        font-size: 20px;
+        width: 50%;
+        line-height: 1.5;
+    }
+
+    .description button {
+        border: 1px solid #ffa500;
+        background: #ffa500;
+        color: #ffa500;
+    }
+
+    .about {
+        margin: 4em 0;
+        padding: 1em;
+        position: relative;
+    }
+
+    .about h1 {
+        color: #F97300;
+        margin: 2em;
+    }
+
+
+
+    .about img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%
+    }
+
+    .about span {
+        display: block;
+        color: #888;
+        position: absolute;
+        left: 115px;
+    }
+
+    .about .desc {
+        padding: 2em;
+        border-left: 4px solid #10828C;
+    }
+
+    .about .desc h3 {
+        color: #10828C;
+    }
+
+    .about .desc p {
+        line-height: 2;
+        color: #888;
+    }
+
+
+    /*Portfolio*/
+    .portfolio {
+        margin: 4em 0;
+        position: relative;
+    }
+
+    .portfolio h1 {
+        color: #F97300;
+        margin: 2em;
+    }
+
+    .portfolio img {
+        height: 15rem;
+        width: 100%;
+        margin: 1em;
+
+
+
+    }
+
+    /*blog style*/
+
+    .blog {
+        margin: 4em 0;
+        position: relative;
+    }
+
+    .blog h1 {
+        color: #F97300;
+        margin: 2em;
+    }
+
+    .blog .card {
+        box-shadow: 0 0 20px #ccc;
+    }
+
+    .blog .card img {
+        width: 100%;
+        height: 12em;
+    }
+
+    @media and (max-width: 768px) {
+        .team .item img {
+            width: 100%;
+        }
+    }
+
+    .blog .card-title {
+        color: #F97300;
+
+    }
+
+    .blog .card-body {
+        padding: 1em;
+    }
+
+    .team {
+        margin: 4em 0;
+        position: relative;
+
+    }
+
+    .team h1 {
+        color: #F97300;
+        margin: 2em;
+    }
+
+    .team .item {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .team .des {
+        background: #F97300;
+        color: #fff;
+        text-align: center;
+        border-top-right-radius: 93%;
+        transition: .3s ease-in-out;
+        position: absolute;
+        width: 88%;
+        bottom: 24px;
+
+
+    }
+
+    .team .item:hover .des {
+        height: 100%;
+        background: #f973007d;
+        position: absolute;
+        width: 89%;
+        padding: 5em;
+        top: 0;
+        border-top-right-radius: 0;
+    }
+
+    .contact-form {
+        margin: 6em 0;
+        position: relative;
+    }
+
+    .contact-form h1 {
+        padding: 2em 1px;
+        color: #F97300;
+    }
+
+    .contact-form .right {
+        max-width: 600px;
+    }
+
+    .contact-form .right .btn-secondary {
+        background: #F97300;
+        color: #fff;
+        border: 0;
+    }
+
+    .contact-form .right .form-control::placeholder {
+        color: #888;
+        font-size: 16px;
+    }
+
+    :root {
+        --lightblue: #F6F9FC;
+        --red: #ffa500;
+    }
+
+    a,
+    a:hover {
+        color: inherit;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    .bg-lightblue {
+        background: var(--lightblue);
+    }
+
+    .bg-red {
+        background: var(--red);
+    }
+
+    .text-red {
+        color: var(--red);
+    }
+
+    .container-fluid-max {
+        max-width: 1440px;
+    }
+
+    .cover {
+        background: no-repeat center/cover;
+    }
+
+    .p-15 {
+        padding: 15px;
+    }
+
+
+</style>
+
+<body>
+<style>
+        h5 {
+            color: #000000;
+        }
+        p {
+            color: #000000;
+        }
+
+        .scroll .hero {
+            transform: scale(0.98);
+        }
+
+        .hero {
+            background-attachment: fixed;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5) 0,
+                    rgba(0, 0, 0, 0.3) 50%,
+                    rgba(0, 0, 0, 0.1) 100%);
+        }
+
+        .hero .container-fluid {
+            z-index: 10;
+        }
+
+
+
+</style>
+<a href="/main/"><div class="text-center" style="background-color: #ffa500"><img src="/static/images/log.jpg" href="/main/" alt="=YAC" width="70" height="80"></a>
+    <h1><a href="/main/">Yet Another Calculator</a></h1></div>
+
+
+<section id="home" class="d-flex align-items-center position-relative vh-100 cover hero"
+         style="background-image:url('https://img3.goodfon.ru/original/2560x1600/f/88/fon-formuly-zakony-znaki.jpg');">
+    <div class="container-fluid container-fluid-max">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <h1 class="text-white">Добро пожаловать в Онлайн Калькулятор !</h1>
+                <div class="mt-3">
+                    <a class="btn bg-red text-white" href="main/" role="button">Воспользоваться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- about section -->
+<div class="about" id="about">
+    <div class="container">
+        <h1 class="text-center">Онлайн Калькулятор!</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <img src="https://sun9-44.userapi.com/c850124/v850124579/7a7/pEAHUdfMtYI.jpg" class="img-fluid" style="width: 300">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 desc">
+
+                <h3>Крючков Арсений</h3><br>
+                <h5 class="muted">Тимлид</h5>
+                <p>
+                    Данный проект имеет особую значимость для всей нашей команды, так как мы вложили в него огромное количество
+                    времени и сил. Наша разработка позволяет упростить процесс вычисления и сэкономить ваше время.
+                    В будущем проект будет усовершенствован, станет универсальнее, проще и удобнее в использовании.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Posts section -->
+ <h1 class="text-center">Возможности</h1>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+         <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div style="height: 500px;">
+                    <div class="text-center hero" style="background-image:url('https://img3.goodfon.ru/original/2560x1600/f/88/fon-formuly-zakony-znaki.jpg');">
+                        <img class="center-pic" src="http://127.0.0.1:8000/static/images/mainmenu_shortcut/loga_elementory.png" class="d-block w-40" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>Простой калькулятор</h5>
+                        <p>Здесь можно производить простые вычисления.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div style="height: 500px;">
+                    <div class="text-center cover hero" style="background-image:url('https://img3.goodfon.ru/original/2560x1600/f/88/fon-formuly-zakony-znaki.jpg');">
+                        <img class="center-pic" src="http://127.0.0.1:8000/static/images/mainmenu_shortcut/loga_equation.png" class="d-block w-40" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>Уравнения</h5>
+                        <p>Здесь можно решать как простые, так и квадратные уравнения.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="carousel-item">
+            <div style="height: 500px;">
+                <div class="text-center cover hero" style="background-image:url('https://img3.goodfon.ru/original/2560x1600/f/88/fon-formuly-zakony-znaki.jpg');">
+                    <img class="center-pic" src="http://127.0.0.1:8000/static/images/mainmenu_shortcut/loga_trigonometry.png" class="d-block w-40" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Тригонометрия</h5>
+                        <p>Здесь сможно посчитать синусы, косинусы и все, что тебе надо</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="carousel-item">
+                <div style="height: 500px;">
+                    <div class="text-center cover hero" style="background-image:url('https://img3.goodfon.ru/original/2560x1600/f/88/fon-formuly-zakony-znaki.jpg');">
+                        <img class="center-pic" src="http://127.0.0.1:8000/static/images/mainmenu_shortcut/loga_diagram.png" class="d-block w-40" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>Построение графиков</h5>
+                        <p>Здесь можно производить простые вычисления.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="carousel-item">
+            <div style="height: 500px;">
+                <div class="text-center cover hero" style="background-image:url('https://img3.goodfon.ru/original/2560x1600/f/88/fon-formuly-zakony-znaki.jpg');">
+                    <img class="center-pic" src="http://127.0.0.1:8000/static/images/mainmenu_shortcut/loga_valute.png" class="d-block w-40" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Курс валют</h5>
+                        <p>Здесь можно производить простые вычисления.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Team section -->
+<div class="team" id="team">
+    <div class="container">
+        <h1 class="text-center">Наша команда</h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                <img src="https://sun9-44.userapi.com/c850124/v850124579/7a7/pEAHUdfMtYI.jpg" class="img-fluid"
+                     alt="team">
+                <div class="des">
+                    Крючков Арсений
+                </div>
+                <span class="text-muted">Teamlead</span>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                <img src="https://sun9-60.userapi.com/c846321/v846321954/c44d7/WkcYPgeYUJA.jpg" class="img-fluid"
+                     alt="team">
+                <div class="des">
+                    Зотов Егор
+                </div>
+                <span class="text-muted">Full stack разработчик</span>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                <img src="https://sun9-13.userapi.com/c846221/v846221843/a9934/p2lzz-pL_HQ.jpg" class="img-fluid"
+                     alt="team">
+                <div class="des">
+                    Бекболотов Аскарбек
+                </div>
+                <span class="text-muted">Frontend разработчик</span>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                <img src="https://sun1-26.userapi.com/re0vQBPvjc8RkGdteuU3Ew-iiyAD6Dl3fstOvw/C-9S_p7Mkk8.jpg"
+                     class="img-fluid" alt="team">
+                <div class="des">
+                    Хаматов Даниил
+                </div>
+                <span class="text-muted">Backend разработчик</span>
+            </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-12 item">
+                    <img src="https://sun9-3.userapi.com/c856036/v856036989/229904/FGRoM5sTFhk.jpg"
+                     class="img-fluid" alt="team">
+                    <div class="des">
+                    Алексей Лось
+                    </div>
+                    <span class="text-muted">Backend разработчик</span>
+                </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                    <img src="/static/images/mainmenu_shortcut/default_avatar_0.png"
+                     class="img-fluid" alt="team">
+                    <div class="des">
+                    Никита Ермилов
+                    </div>
+                    <span class="text-muted">Backend разработчик</span>
+                </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                    <img src="https://sun1-23.userapi.com/sYBXS4c7BEeAiyKxkUzgPxa5K9gcpAdkjBEnOg/8nUPq97wXEY.jpg"
+                     class="img-fluid" alt="team">
+                    <div class="des">
+                    Владислав Сердюков
+                    </div>
+                    <span class="text-muted">Backend разработчик</span>
+                </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                    <img src="/static/images/mainmenu_shortcut/default_avatar_0.png"
+                     class="img-fluid" alt="team">
+                    <div class="des">
+                    Владислав Козырев
+                    </div>
+                    <span class="text-muted">Backend разработчик</span>
+                </div>
+
+
+
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                    <img src="/static/images/mainmenu_shortcut/default_avatar_0.png"
+                     class="img-fluid" alt="team">
+                    <div class="des">
+                    Богдан Жарков
+                    </div>
+                    <span class="text-muted">Backend разработчик</span>
+                </div>
+
+
+
+            <div class="col-lg-3 col-md-3 col-sm-12 item">
+                    <img src="/static/images/mainmenu_shortcut/default_avatar_0.png"
+                     class="img-fluid" alt="team">
+                    <div class="des">
+                    Артем Давыдов
+                    </div>
+                    <span class="text-muted">Backend разработчик</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+<footer style="
+	width: 100%;
+	height: 40px;
+	margin:auto;
+	text-align: center;
+background-color: #ffa500">
+    <span>© MS102 | 2020 | All rights reserved </span>
+    <a href="#" style="background-color: #ffa500"
+       style="position: fixed; z-index: 9999; bottom: 0%; right: 0%; background: #ffa500; margin: 5px 15px 15px 5px; padding: 15px; opacity: .9;"
+       class="uk-icon uk-totop">
+        <svg width="18" height="10" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg" data-svg="totop">
+            <polyline fill="none" stroke="#000" stroke-width="1.2" points="1 9 9 1 17 9 "></polyline>
+        </svg>
+    </a>
+
+
+
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
