@@ -33,7 +33,6 @@ Password (repeat): promprog
 ```
 9. Создать конфигурацию запуска в PyCharm (файл `manage.py`, опция `runserver`)
 
-# FunctionableCalculator
 ## Руководство пользователя
 
 #### Описание
