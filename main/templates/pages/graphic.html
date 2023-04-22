@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="uk-card uk-card-default uk-card-body uk-text-center" uk-grid uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300; repeat: true" >
+    <form class="uk-width-medium-1-2 uk-container-center">
+        <h1>Данные графика</h1>
+                <label class="uk-label uk-input uk-width-1-6">Левый предел:  </label><input id="borderRight" class="uk-input uk-width-1-6" value="-10"><br>
+                <label class="uk-label uk-input uk-width-1-6">Правый предел:   </label><input id="borderLeft" class="uk-input uk-width-1-6" value="10"><br>
+
+        <div class="uk-margin"><label>Функция графика:</label>
+                <!--<input id="FunconGraph" class="uk-button uk-button-default" type=text>-->
+            <select id="FunconGraph" class="uk-button uk-button-default">
+                    <option>X^2</option>
+                    <option>x+1</option>
+                    <option>cos</option>
+                    <option>sin</option>
+                    <option>1/X</option>
+            </select></div>
+
+        <h1>Параметры Графика</h1>
+        <div class="uk-margin">
+
+            <div class="uk-margin"><div><label>Имя графика:</label><input id="titleGraph" type=text value=""></div></div>
+
+            <div class="uk-margin"><label>Тип графика:</label>
+                <select id="typeGraph" class="uk-button uk-button-default">
+                    <option value="line" selected>Линия</option>
+                    <option value="bar">Столбы</option>
+                    <option value="pie">Пирог</option>
+                    <option value="doughnut">Бублик</option>
+                    <option value="polarArea">Области</option>
+                    <option value="radar">Радар</option>
+            </select></div>
+
+            <div class="uk-card-body uk-dark uk-background-muted">
+            <h3>Выбор цвета линии:</h3>
+            <div class="uk-column-1-5 uk-column-divider">
+                <label>Толщина линии:</label><input id="borderWidthGraph" class="uk-width-1-1" type=number value="1">
+                <label class="uk-label uk-label-danger">Красный:</label><input type=range  class="uk-width-1-1"  id="BordercolorGraphR" min="0" max="255" value="255">
+                <label class="uk-label uk-label-success">Зелёный:</label><input type=range  class="uk-width-1-1"  id="BordercolorGraphG" min="0" max="255" value="0">
+                <label class="uk-label">Синий:</label><input type=range id="BordercolorGraphB"  class="uk-width-1-1"  min="0" max="255" value="0">
+                <label class="uk-label uk-label-warning">Прозрачность:</label><input type=range class="uk-width-1-1" id="BorderColorGraphA" min="0" max="1" value="1" step="0.05">
+            </div></div>
+            <hr>
+            <div class="uk-card-body uk-dark uk-background-muted">
+            <h3>Выбор цвета заливки:</h3>
+            <div class="uk-column-1-5 uk-column-divider"><br>
+                <label>Заливка:</label><input id="fillGraph" class="uk-checkbox" type=checkbox>
+                <label class="uk-label uk-label-danger">Красный:</label><input type=range  class="uk-width-1-1"  id="fillcolorGraphR" min="0" max="255" value="90">
+                <label class="uk-label uk-label-success">Зелёный:</label><input type=range  class="uk-width-1-1"  id="fillcolorGraphG" min="0" max="255" value="90">
+                <label class="uk-label">Синий:</label><input type=range id="fillcolorGraphB"  class="uk-width-1-1"  min="0" max="255" value="90">
+                <label class="uk-label uk-label-warning">Прозрачность:</label><input type=range  class="uk-width-1-1"  id="fillcolorGraphA" min="0" max="1" value="0.1" step="0.05">
+            </div></div>
+        </div>
+        <input type="button" class="uk-button uk-button-default" value="Создать график" onclick="ToResetDiagram()">
+    </form>
+</div>
+<div id="GraphDiv" align="center">
+    <canvas id="Graph" style="width:100%;height: 600px"></canvas>
+</div>
+<script type="text/javascript">
+
+</script>
+<noscript>
+ <div align="center">
+  Извините, для работы приложения нужен включённый Javascript
+ </div>
+</noscript>
+<a onclick="javascript:history.back(); return false;" style="position: fixed; left:20px; top:250px; z-index: 9999; background: #ffa500; padding: 0px 5px 0px 5px; margin: 5px 10px 10px 5px; height:30px; width:60px; padding-top:5px;">Назад</a>
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.css">
+<script type="text/javascript" src="{% static 'js/graphics.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/graphic_reset.js' %}"></script>
+{% endblock %}

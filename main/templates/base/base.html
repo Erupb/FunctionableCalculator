@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ pagename }} - Yet Another Calculator</title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/css/uikit.min.css" />
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit-icons.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+        footer {
+            background-color: #ffa500;
+            height : 40px;
+            bottom : 0;
+            position: fixed;
+            left:0;
+            width:100%;
+            text-align: center;
+            }
+        }
+
+        </style>
+        {% block extra_css %} {% endblock %}
+    </head>
+
+    <body>
+        <header>
+            {% include 'base/menu.html' %}
+        </header>
+        <main>
+            <div class="uk-margin-medium-top uk-margin-medium-bottom uk-child-width-expand" uk-grid>
+                {% block content %} {% endblock %}
+            </div>
+        </main>
+
+        <footer style="
+	width: 100%;
+	height: 40px;
+	margin:auto;">
+            {% block footer %}
+                <span>&copy; MS102 | {% now "Y" %} | All rights reserved </span> <a href="#" uk-totop uk-scroll style="position: fixed; z-index: 9999; bottom: 0%; right: 0%; background: #ffa500; margin: 5px 15px 15px 5px; padding: 15px; opacity: .9;"></a>
+            {% endblock %}
+        </footer>
+
+        {% block extra_js %} {% endblock %}
+    </body>
+
+</html>

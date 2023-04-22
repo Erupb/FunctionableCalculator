@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="uk-flex uk-flex-center">
+    <div class="uk-card uk-card-default uk-card-body">
+        <div align="center">
+            <div class="uk-dark uk-padding" style="margin-bottom:70px;">
+                <form action="{% url 'integral' %}" method="POST" id="saveform">
+                    {% csrf_token %}
+
+                    <div class="uk-margin">{{ form.range_max }}</div>
+
+                    <div class="uk-margin" uk-margin>
+                        <img src="{% static 'images/integral.jpeg' %}"
+                             alt="|" width="100" height="110"
+                             class="uk-form-label">
+                        {{ form.formula }}                        {{ result }}
+ dx
+                    </div>
+
+                    <div class="uk-margin">{{ form.range_min }}</div>
+
+                    <input type="submit" class="uk-button uk-button-primary number_0" value="Посчитать">
+                    <span id="result"></span><!-- Для вывода результата-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<a onclick="javascript:history.back(); return false;" style="position: fixed; left:20px; top:250px; z-index: 9999; background: #ffa500; padding: 0px 5px 0px 5px; margin: 5px 10px 10px 5px; height:30px; width:60px; padding-top:5px;">Назад</a>
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

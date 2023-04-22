@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+    {% if form.errors %}
+        <div class="uk-alert" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <h2 uk-alert class="uk-align-right@s">Неправильно введен логин и пароль</h2>
+        </div>
+    {% endif %}
+
+<div class="uk-card uk-card-default uk-card-body uk-text-center" uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300; repeat: true" uk-grid>
+    <form action="{% url 'login' %}" method="POST" class="uk-width-medium-1-2 uk-container-center">
+        <h1>Авторизация</h1>
+        {% csrf_token %}
+        {% for item in form %}
+        <div class="uk-margin">
+            <label class="uk-inline uk-form-label uk-form-controls">{{ item.label }}: </label><div class="uk-form-controls">{{ item }}</div>
+        </div>
+        {% endfor %}
+        <input type="submit" class="uk-button uk-button-primary uk-button-large" value="Войти">
+    </form>
+</div>
+
+
+{% endblock %}

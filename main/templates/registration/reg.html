@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div></div>
+    <div class="uk-margin-top">
+        <div class="uk-card uk-card-default uk-card-body">
+            {% if form.errors %}
+            <div class="uk-alert-danger" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+                <p>{{ form.errors }}
+                    {{ error }}</p>
+            </div>
+            {% endif %}
+
+            <form action="/reg/" method="POST" class="uk-form-horizontal uk-margin-large">
+                <h3>Регистрация</h3>
+                <hr>
+                {% csrf_token %}
+
+                {% for item in form %}
+                <div class="uk-margin">
+                    <label class="uk-form-label"><b>{{ item.label }}:</b></label>
+                    <div class="uk-form-controls">
+                        {{ item }}
+                    </div>
+                </div>
+                {% endfor %}
+
+                <input type="submit" class="uk-button uk-button-primary" value="Зарегистрироваться">
+            </form>
+        </div>
+        </div>
+    <div></div>
+</div>
+
+{% endblock %}
